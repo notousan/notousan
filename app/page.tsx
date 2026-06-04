@@ -1,31 +1,36 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-zinc-950 p-6 md:p-24 text-white overflow-hidden relative">
+    <div className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-black text-center p-6">
       
-      {/* Arka plan parlama efektleri (Glow) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600/20 rounded-full blur-[100px] md:blur-[150px] -z-10"></div>
-      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-purple-600/20 rounded-full blur-[100px] md:blur-[120px] -z-10"></div>
+      {/* Matrix Izgara Efekti (Arka Plan) */}
+      <div className="absolute inset-0 z-0 opacity-20" style={{
+        backgroundImage: 'linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }}></div>
 
-      <div className="z-10 w-full max-w-5xl flex flex-col items-center justify-center gap-8 text-center">
-        
-        {/* Başlık (Gradient Renk Geçişli) */}
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 drop-shadow-sm">
-          Merhaba Dünya!
+      {/* Merkezdeki Yeşil Parlama */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-green-600/10 rounded-full blur-[120px] -z-10"></div>
+
+      <div className="relative z-20 max-w-4xl mx-auto flex flex-col items-center gap-6">
+        <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white drop-shadow-[0_0_15px_rgba(34,197,94,0.6)]">
+          WAKE UP, <span className="text-green-500">NEO...</span>
         </h1>
         
-        {/* Alt Metin */}
-        <p className="text-lg md:text-2xl text-zinc-400 max-w-2xl leading-relaxed font-light">
-          Bu benim ilk <span className="text-white font-semibold">Next.js</span> ve <span className="text-white font-semibold">Tailwind CSS</span> projem. Web geliştirme dünyasına harika bir giriş yapıyorum!
+        <p className="text-xl md:text-2xl text-green-400/80 mb-8 font-mono tracking-widest uppercase">
+          Follow the white rabbit.
         </p>
         
-        {/* Etkileşimli Buton */}
-        <div className="mt-8 group rounded-full border border-zinc-800 bg-zinc-900/50 px-8 py-4 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)] backdrop-blur-md cursor-pointer hover:-translate-y-1">
-          <span className="font-semibold text-zinc-300 group-hover:text-blue-400 transition-colors duration-300">
-            Kodlamaya Başla 🚀
-          </span>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center w-full mt-8">
+          <a href="#" className="group relative px-8 py-4 bg-green-500/10 border border-green-500 text-green-400 font-mono text-lg uppercase tracking-wider transition-all duration-300 hover:bg-green-500 hover:text-black hover:shadow-[0_0_30px_rgba(34,197,94,0.6)]">
+            <span className="absolute inset-0 w-full h-full -z-10 bg-green-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            Projelerim
+          </a>
+          
+          <a href="#" className="px-8 py-4 border border-zinc-700 text-zinc-400 font-mono text-lg uppercase tracking-wider transition-all duration-300 hover:border-green-500/50 hover:text-green-400 hover:bg-green-500/5">
+            Sisteme Bağlan
+          </a>
         </div>
-        
       </div>
-    </main>
+    </div>
   );
 }
